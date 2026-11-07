@@ -1,0 +1,37 @@
+{
+  "ibu": {
+    "engine": "edge-tts",
+    "voice": "id-ID-GadisNeural",
+    "rate": "-8%",
+    "pitch": "-4Hz",
+    "note": "narator ibu hangat (cerita & pesan adab)"
+  },
+  "qila": {
+    "engine": "edge-tts",
+    "voice": "id-ID-GadisNeural",
+    "rate": "+2%",
+    "pitch": "+6Hz",
+    "note": "kakak perempuan ceria"
+  },
+  "ezra": {
+    "engine": "edge-tts",
+    "voice": "id-ID-ArdiNeural",
+    "rate": "+8%",
+    "pitch": "+14Hz",
+    "note": "adik laki polos, lebih tinggi & cepat"
+  },
+  "dalang": {
+    "engine": "edge-tts",
+    "voice": "id-ID-GadisNeural",
+    "rate": "-8%",
+    "pitch": "-4Hz",
+    "note": "alias narator ibu"
+  },
+  "narrator": {
+    "engine": "edge-tts",
+    "voice": "id-ID-GadisNeural",
+    "rate": "-8%",
+    "pitch": "-4Hz",
+    "note": "alias narator ibu untuk narasi umum"
+  }
+}

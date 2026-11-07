@@ -1,0 +1,38 @@
+# Konfigurasi provider AI — agnostik. Ganti model/endpoint tanpa menyentuh kode.
+# Setiap provider punya: engine id, model, dan nama env var untuk API key.
+# API key TIDAK pernah disimpan di file ini.
+
+providers:
+  llm:
+    # Naskah cerita (teks). Murah & cukup untuk 10 halaman balita.
+    engine: "openai-compatible"
+    model: "gemini-2.0-flash"
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+    api_key_env: "GEMINI_API_KEY"
+    max_output_tokens: 4096
+    temperature: 0.7
+    fallback:
+      engine: "openai-compatible"
+      model: "gpt-4o-mini"
+      base_url: "https://api.openai.com/v1"
+      api_key_env: "OPENAI_API_KEY"
+
+  image:
+    # Latar adegan (tanpa karakter). Reference-image conditioning wajib.
+    engine: "gemini-image"
+    model: "gemini-2.5-flash-image"
+    api_key_env: "GEMINI_API_KEY"
+    size: "1024x1024"
+    quality: "medium"
+    fallback:
+      engine: "openai-image"
+      model: "gpt-image-1"
+      api_key_env: "OPENAI_API_KEY"
+
+  tts:
+    # Default gratis (CLI edge-tts). Upgrade ke ElevenLabs bila perlu.
+    engine: "edge-tts"
+    # ElevenLabs starter: $6/bln, 30k credits ≈ 30 menit.
+    # engine: "elevenlabs"
+    # model: "eleven_multilingual_v2"
+    # api_key_env: "ELEVENLABS_API_KEY"

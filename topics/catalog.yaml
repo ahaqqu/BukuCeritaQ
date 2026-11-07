@@ -1,0 +1,283 @@
+# Katalog topik seri "Petualangan Adab Qila & Ezra"
+# Dihasilkan dari riset konten (docs/PLAN.md §5–6).
+# Alur: agen usulkan → user pilih/mengurutkan → pipeline memproduksi.
+#
+# Field:
+#   slug        id buku (nama folder books/<slug>)
+#   title       judul Indonesia
+#   concept     satu konsep adab (satu per buku)
+#   key_phrase  frasa kunci yang diajarkan (maks 1 per buku)
+#   key_phrase_source  sumber syariat (metadata, TIDAK tampil di buku)
+#   pillar      1=rumah & keluarga, 2=publik & sekolah, 3=digital & global
+#   age_band    "2-3" | "4-5"
+#   hook        premis cerita Qila & Ezra
+#   status      backlog | next | drafting | done
+#   priority    urutan produksi (rendah = dulu)
+
+books:
+  # ── Pilar 1 — Rumah & Keluarga (prioritas utama) ──────────────────
+  - slug: adab-salam
+    title: Salam untuk Semua
+    concept: menyapa dengan salam
+    key_phrase: "Assalamu'alaikum"
+    key_phrase_source: "HR. Bukhari no. 6217; HR. Muslim no. 2163"
+    pillar: 1
+    age_band: "2-3"
+    hook: Ezra lupa salam saat Umi pulang; Qila ingatkan dengan senyum.
+    status: next
+    priority: 1
+
+  - slug: bismillah-makan
+    title: Bismillah, Makan Enak!
+    concept: doa sebelum makan
+    key_phrase: "Bismillah"
+    key_phrase_source: "HR. Abu Dawud no. 3767; HR. Tirmidhi no. 1858"
+    pillar: 1
+    age_band: "2-3"
+    hook: Ezra sudah mau suap; Qila tahan tangan: "Bismillah dulu!"
+    status: backlog
+    priority: 2
+
+  - slug: alhamdulillah-khatam
+    title: Alhamdulillah, Kenyang!
+    concept: syukur sesudah makan
+    key_phrase: "Alhamdulillah"
+    key_phrase_source: "HR. Abu Dawud no. 3767; HR. Tirmidhi no. 1858"
+    pillar: 1
+    age_band: "2-3"
+    hook: Piring kosong, tangan kecil menengadah bersyukur.
+    status: backlog
+    priority: 3
+
+  - slug: jazakallah
+    title: Terima Kasih, Jazakallah
+    concept: berterima kasih beradab
+    key_phrase: "Jazakallah khairan"
+    key_phrase_source: "HR. Tirmidhi no. 2035"
+    pillar: 1
+    age_band: "2-3"
+    hook: Qila beri jus; Ezra ucap "Jazakallah" pertama kali.
+    status: backlog
+    priority: 4
+
+  - slug: afwan-maaf
+    title: Afwan, Sama-sama
+    concept: memaafkan & menjawab
+    key_phrase: "Afwan"
+    key_phrase_source: "adab umat Islam (istilah jawab/maaf), lihat QS. An-Nur: 22"
+    pillar: 1
+    age_band: "2-3"
+    hook: Ezra menjatuhkan balok Qila; saling maaf lalu peluk.
+    status: backlog
+    priority: 5
+
+  - slug: minta-maaf
+    title: Maaf, Aku Khilaf
+    concept: berani minta maaf
+    key_phrase: "Maaf"
+    key_phrase_source: "HR. Bukhari no. 6307 (saling memaafkan)"
+    pillar: 1
+    age_band: "3-4"
+    hook: Ezra mencoret dinding; Qila ajak bilang maaf ke Ayah.
+    status: backlog
+    priority: 6
+
+  - slug: doa-tidur
+    title: Doa Sebelum Tidur
+    concept: doa malam
+    key_phrase: "Bismillahika Allahumma amutu wa ahya"
+    key_phrase_source: "HR. Bukhari no. 6324"
+    pillar: 1
+    age_band: "2-3"
+    hook: Lampu redup; Qila & Ezra lantunkan doa tidur bersama Dalang.
+    status: backlog
+    priority: 7
+
+  - slug: syukur-pagi
+    title: Pagi yang Syukur
+    concept: Alhamdulillah pagi hari
+    key_phrase: "Alhamdulillah"
+    key_phrase_source: "HR. Muslim no. 2718 (doa bangun tidur)"
+    pillar: 1
+    age_band: "2-3"
+    hook: Matahari terbit; Qila buka jendela: "Alhamdulillah, pagi!"
+    status: backlog
+    priority: 8
+
+  - slug: makan-bersama
+    title: Makan Bersama, Riang Bersama
+    concept: adab jamuan & berbagi
+    key_phrase: "Silakan makan"
+    key_phrase_source: "adab jamuan (HR. Bukhari no. 5470)"
+    pillar: 1
+    age_band: "3-4"
+    hook: Ada tamu kecil; Qila & Ezra bagi kerupuk dan ucap salam.
+    status: backlog
+    priority: 9
+
+  - slug: sabar-menunggu
+    title: Tunggu Ya, Sebentar
+    concept: sabar menunggu giliran
+    key_phrase: "Tunggu ya"
+    key_phrase_source: "sabar (QS. Al-Baqarah: 153)"
+    pillar: 1
+    age_band: "3-4"
+    hook: Ezra mau didahulukan mandi; Qila ajak hitung sampai sepuluh.
+    status: backlog
+    priority: 10
+
+  - slug: kata-lembut
+    title: Kata-kata Lembut
+    concept: berbicara baik ke keluarga
+    key_phrase: "Tolong ya"
+    key_phrase_source: "QS. Al-Isra': 23 (ucapkan yang baik)"
+    pillar: 1
+    age_band: "4-5"
+    hook: Ezra membentak saat main; Qila tunjukkan cara meminta dengan lembut.
+    status: backlog
+    priority: 11
+
+  - slug: birrul-walidain
+    title: Tangan Kecil, Bantuan Besar
+    concept: berbakti pada orang tua
+    key_phrase: "Terima kasih, Umi"
+    key_phrase_source: "QS. Al-Isra': 23-24 (birrul walidain)"
+    pillar: 1
+    age_band: "4-5"
+    hook: Qila & Ezra bantu Umi angkat belanjaan.
+    status: backlog
+    priority: 12
+
+  # ── Pilar 2 — Publik & Sekolah ────────────────────────────────────
+  - slug: rapikan-mainan
+    title: Mainan Pulang ke Rumahnya
+    concept: merapikan & bersih
+    key_phrase: "Ayo rapikan"
+    key_phrase_source: "HR. Muslim no. 531 (kebersihan sebagian dari iman)"
+    pillar: 2
+    age_band: "2-3"
+    hook: Kamar berantakan; Qila & Ezra nyanyi sambil merapikan.
+    status: backlog
+    priority: 13
+
+  - slug: berbagi-mainan
+    title: Ayo Bergantian
+    concept: berbagi dengan teman
+    key_phrase: "Giliranmu"
+    key_phrase_source: "HR. Bukhari no. 6011 (tidak beriman hingga ia mencintai saudaranya)"
+    pillar: 2
+    age_band: "2-3"
+    hook: Satu ayunan, dua anak; Qila ajak bergantian sambil senyum.
+    status: backlog
+    priority: 14
+
+  - slug: antre
+    title: Antre, Tunggu Giliran
+    concept: antre di sekolah
+    key_phrase: "Antre dulu"
+    key_phrase_source: "adab umum (keteraturan, keadilan)"
+    pillar: 2
+    age_band: "3-4"
+    hook: Di kelas Ezra mau mendorong; Qila bilang "Antre dulu".
+    status: backlog
+    priority: 15
+
+  - slug: hormat-guru
+    title: Guru, Terima Kasih
+    concept: hormat pada guru
+    key_phrase: "Terima kasih, Bu Guru"
+    key_phrase_source: "adab menuntut ilmu (HR. Tirmidhi no. 2606)"
+    pillar: 2
+    age_band: "3-4"
+    hook: Selesai kelas, Qila & Ezra ucap salam dan terima kasih.
+    status: backlog
+    priority: 16
+
+  - slug: jujur
+    title: Jujur Itu Tenang
+    concept: kejujuran
+    key_phrase: "Aku yang memecahkan"
+    key_phrase_source: "HR. Bukhari no. 6054 (kejujuran menuntun ke surga)"
+    pillar: 2
+    age_band: "4-5"
+    hook: Ezra memecahkan vas, mengaku ke Ayah; hati lega.
+    status: backlog
+    priority: 17
+
+  - slug: tidak-memotong
+    title: Dengar Dulu, Ya
+    concept: tidak memotong pembicaraan
+    key_phrase: "Dengar dulu"
+    key_phrase_source: "adab bergaul (HR. Bukhari no. 6018)"
+    pillar: 2
+    age_band: "4-5"
+    hook: Ezra potong cerita Qila; diajarkan angkat tangan dulu.
+    status: backlog
+    priority: 18
+
+  - slug: suara-pelan
+    title: Di Perpustakaan, Suara Pelan
+    concept: adab ruang tenang
+    key_phrase: "Sedikit pelan"
+    key_phrase_source: "adab umum (menjaga ketenangan)"
+    pillar: 2
+    age_band: "4-5"
+    hook: Ezra baca keras; Qila bisik "Sedikit pelan".
+    status: backlog
+    priority: 19
+
+  - slug: gotong-royong
+    title: Bersama Lebih Mudah
+    concept: gotong royong
+    key_phrase: "Ayo bersama"
+    key_phrase_source: "HR. Muslim no. 4861 (bersama lebih kuat)"
+    pillar: 2
+    age_band: "4-5"
+    hook: Sampah di taman sekolah; kelas kerja bersama sampai bersih.
+    status: backlog
+    priority: 20
+
+  # ── Pilar 3 — Digital & Global ───────────────────────────────────
+  - slug: gadget-batas
+    title: Sebentar Saja, Ya
+    concept: bijak memakai gadget
+    key_phrase: "Sebentar saja"
+    key_phrase_source: "waktu (QS. Al-Asr); adab memanfaatkan umur"
+    pillar: 3
+    age_band: "4-5"
+    hook: Ezra minta nonton lagi; Qila ajak atur waktu bersama.
+    status: backlog
+    priority: 21
+
+  - slug: layar-istirahat
+    title: Gadget Istirahat, Kita Tidur
+    concept: tidur cukup tanpa layar
+    key_phrase: "Saatnya tidur"
+    key_phrase_source: "HR. Bukhari no. 6320 (doa tidur, menjaga waktu)"
+    pillar: 3
+    age_band: "4-5"
+    hook: Layar masih nyala; Qila matikan: "Saatnya tidur."
+    status: backlog
+    priority: 22
+
+  - slug: tanya-dulu
+    title: Tanya Ayah Umi Dulu
+    concept: tidak mudah percaya info
+    key_phrase: "Tanya dulu"
+    key_phrase_source: "QS. Al-Hujurat: 6 (tabayyun)"
+    pillar: 3
+    age_band: "4-5"
+    hook: Ezra lihat gambar aneh; Qila ajak bertanya dulu.
+    status: backlog
+    priority: 23
+
+  - slug: salam-dunia
+    title: Salam untuk Dunia
+    concept: sopan pada warga dunia
+    key_phrase: "Hello, friend"
+    key_phrase_source: "QS. An-Nisa': 1 (kemanusiaan universal)"
+    pillar: 3
+    age_band: "4-5"
+    hook: Bertemu anak dari negara lain di taman; Qila ajak salam & sapa.
+    status: backlog
+    priority: 24

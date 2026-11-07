@@ -1,0 +1,212 @@
+{
+  "book_meta": {
+    "slug": "adab-salam",
+    "title": "Salam untuk Semua",
+    "concept": "menyapa dengan salam",
+    "key_phrase": "Assalamu'alaikum",
+    "key_phrase_source": "HR. Bukhari no. 6217; HR. Muslim no. 2163",
+    "pillar": 1,
+    "age_band": "2-3",
+    "word_budget": 8,
+    "sentence_pattern": "Saat ___ , kita bilang: Assalamu'alaikum",
+    "tagline": "Pintar Beretika, Santun Berbudaya",
+    "credit": "Karya Dalang: Mas-sama & Keluarga"
+  },
+  "style_lock": {
+    "style_refs": ["research/page7_0_X26.jpg"],
+    "seed": 42,
+    "palette": {
+      "sky": "#E0F2FE",
+      "sunshine": "#FEF08A",
+      "leaf": "#22C55E",
+      "orange": "#F97316",
+      "pink": "#EC4899",
+      "slate": "#1E293B",
+      "gold": "#D4A017",
+      "cream": "#FFF8E7"
+    }
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "page_type": "cover",
+      "layout_type": "cover",
+      "visual_scene": {
+        "background_ref": "bg_rumah_pagi",
+        "characters": [
+          { "id": "qila", "pose": "wave", "x": 0.3, "y": 0.82, "scale": 1.05 },
+          { "id": "ezra", "pose": "salam", "x": 0.7, "y": 0.82, "scale": 1.0 }
+        ],
+        "props": ["frame_kayu"]
+      },
+      "dialogue": [],
+      "on_screen_text": "Salam untuk Semua",
+      "dalang_note": "Sampul: Qila melambaikan tangan, Ezra menyapa dengan salam.",
+      "repeats_of": null
+    },
+    {
+      "page_number": 2,
+      "page_type": "story",
+      "layout_type": "story-bubble",
+      "visual_scene": {
+        "background_ref": "bg_rumah_pagi",
+        "characters": [
+          { "id": "qila", "pose": "smile", "x": 0.32, "y": 0.8, "scale": 1.0 },
+          { "id": "ezra", "pose": "curious", "x": 0.68, "y": 0.8, "scale": 0.95 }
+        ],
+        "props": []
+      },
+      "dialogue": [
+        { "speaker": "dalang", "text": "Qila dan Ezra menunggu Umi.", "narration_text": "Ini Qila dan Ezra. Mereka sedang menunggu Umi pulang.", "bubble": "a" }
+      ],
+      "on_screen_text": "",
+      "dalang_note": "Suasana pagi yang tenang, wajah ceria menunggu.",
+      "repeats_of": null
+    },
+    {
+      "page_number": 3,
+      "page_type": "story",
+      "layout_type": "story-bubble",
+      "visual_scene": {
+        "background_ref": "bg_rumah_pagi",
+        "characters": [
+          { "id": "ezra", "pose": "smile", "x": 0.5, "y": 0.8, "scale": 1.05 }
+        ],
+        "props": []
+      },
+      "dialogue": [
+        { "speaker": "ezra", "text": "Umi pulang!", "narration_text": "Ezra berlari riang: Umi pulang!", "bubble": "a" }
+      ],
+      "on_screen_text": "",
+      "dalang_note": "Ezra sangat senang, langsung berlari ke pintu.",
+      "repeats_of": null
+    },
+    {
+      "page_number": 4,
+      "page_type": "story",
+      "layout_type": "story-bubble",
+      "visual_scene": {
+        "background_ref": "bg_ruang_tamu",
+        "characters": [
+          { "id": "qila", "pose": "explain", "x": 0.35, "y": 0.8, "scale": 1.0 },
+          { "id": "ezra", "pose": "curious", "x": 0.72, "y": 0.8, "scale": 0.95 }
+        ],
+        "props": []
+      },
+      "dialogue": [
+        { "speaker": "qila", "text": "Ezra, bilang salam dulu!", "narration_text": "Qila tersenyum: Ezra, bilang salam dulu, ya!", "bubble": "a" },
+        { "speaker": "qila", "text": "Assalamu'alaikum!", "narration_text": "Assalamu'alaikum!", "bubble": "b" }
+      ],
+      "on_screen_text": "Assalamu'alaikum",
+      "dalang_note": "Frasa kunci pertama kali muncul. Baca pelan dan jelas.",
+      "repeats_of": null
+    },
+    {
+      "page_number": 5,
+      "page_type": "story",
+      "layout_type": "story-bubble",
+      "visual_scene": {
+        "background_ref": "bg_ruang_tamu",
+        "characters": [
+          { "id": "ezra", "pose": "salam", "x": 0.5, "y": 0.8, "scale": 1.05 }
+        ],
+        "props": []
+      },
+      "dialogue": [
+        { "speaker": "ezra", "text": "Assalamu'alaikum, Umi!", "narration_text": "Ezra mencoba: Assalamu'alaikum, Umi!", "bubble": "a" }
+      ],
+      "on_screen_text": "",
+      "dalang_note": "Ezra mencoba dengan malu-malu. Pujilah usahanya.",
+      "repeats_of": 4
+    },
+    {
+      "page_number": 6,
+      "page_type": "story",
+      "layout_type": "story-bubble",
+      "visual_scene": {
+        "background_ref": "bg_ruang_tamu",
+        "characters": [
+          { "id": "ezra", "pose": "curious", "x": 0.5, "y": 0.8, "scale": 1.0 }
+        ],
+        "props": []
+      },
+      "dialogue": [
+        { "speaker": "ezra", "text": "A... assalamu...", "narration_text": "Ezra tergagap sedikit: A... assalamu...", "bubble": "a" }
+      ],
+      "on_screen_text": "",
+      "dalang_note": "Wobble lucu — tidak apa-apa belum sempurna.",
+      "repeats_of": 4
+    },
+    {
+      "page_number": 7,
+      "page_type": "refrain",
+      "layout_type": "refrain",
+      "visual_scene": {
+        "background_ref": "bg_ruang_tamu",
+        "characters": [
+          { "id": "qila", "pose": "smile", "x": 0.32, "y": 0.8, "scale": 1.0 },
+          { "id": "ezra", "pose": "salam", "x": 0.68, "y": 0.8, "scale": 0.95 }
+        ],
+        "props": []
+      },
+      "dialogue": [
+        { "speaker": "qila", "text": "Assalamu'alaikum, Umi!", "narration_text": "Bersama-sama: Assalamu'alaikum, Umi!", "bubble": "a" }
+      ],
+      "on_screen_text": "Assalamu'alaikum",
+      "dalang_note": "Refrain — ajak anak mengulang dengan suara lantang.",
+      "repeats_of": 4
+    },
+    {
+      "page_number": 8,
+      "page_type": "climax",
+      "layout_type": "story-bubble",
+      "visual_scene": {
+        "background_ref": "bg_taman",
+        "characters": [
+          { "id": "ezra", "pose": "salam", "x": 0.5, "y": 0.8, "scale": 1.0 }
+        ],
+        "props": []
+      },
+      "dialogue": [
+        { "speaker": "ezra", "text": "Assalamu'alaikum, Nenek!", "narration_text": "Ezra sudah bisa sendiri: Assalamu'alaikum, Nenek!", "bubble": "a" }
+      ],
+      "on_screen_text": "",
+      "dalang_note": "Transfer: Ezra kini menyapa Nenek sendiri. Bangga!",
+      "repeats_of": 4
+    },
+    {
+      "page_number": 9,
+      "page_type": "closing",
+      "layout_type": "hikmah",
+      "visual_scene": {
+        "background_ref": "bg_rumah_pagi",
+        "characters": [
+          { "id": "qila", "pose": "smile", "x": 0.35, "y": 0.72, "scale": 0.9 },
+          { "id": "ezra", "pose": "salam", "x": 0.65, "y": 0.72, "scale": 0.85 }
+        ],
+        "props": []
+      },
+      "dialogue": [],
+      "on_screen_text": "",
+      "dalang_note": "Salam membuat hati senang dan rumah penuh kasih sayang. Mari kita ucapkan Assalamu'alaikum kepada Ayah, Umi, dan semua orang. Ayo bilang bersama: Assalamu'alaikum!",
+      "repeats_of": null
+    },
+    {
+      "page_number": 10,
+      "page_type": "closing",
+      "layout_type": "closing",
+      "visual_scene": {
+        "background_ref": "bg_rumah_pagi",
+        "characters": [
+          { "id": "qila", "pose": "wave", "x": 0.35, "y": 0.82, "scale": 1.05 },
+          { "id": "ezra", "pose": "smile", "x": 0.68, "y": 0.82, "scale": 1.0 }
+        ],
+        "props": ["frame_kayu"]
+      },
+      "dialogue": [],
+      "on_screen_text": "Alhamdulillah. Assalamu'alaikum, teman!",
+      "dalang_note": "Penutup hangat. Sapa pembaca: sampai jumpa di buku berikutnya!",
+      "repeats_of": null
+    }
+  ]
+}

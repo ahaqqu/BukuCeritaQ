@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Render outputs (regenerable via: bun run src/cli.ts render <slug>)
+books/*/pages/
+books/*/web/
+books/*/audio/_segments/
+
+# Scratch / temp
+*.bak
+research/_*.png
+research/_*.jpg
+research/_*.py
+
+# OS / editor
+.DS_Store
+Thumbs.db
+books/*/scenes/_render-page-*.html
+books/*/book.pdf

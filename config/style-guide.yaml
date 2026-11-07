@@ -1,0 +1,108 @@
+﻿# Sumber kebenaran gaya visual — dibaca oleh semua prompt & template.
+# v2: diselaraskan dengan contoh halaman (research/contoh-bab1.png).
+# Jangan ubah tanpa sinkron dengan CONCEPT.md §3.
+
+series:
+  title: "Petualangan Adab Qila & Ezra"
+  tagline: "Pintar Beretika, Santun Berbudaya"
+  credit: "Karya Dalang: Mas-sama & Keluarga"
+  language: "id"
+
+palette:
+  sky: "#E0F2FE"
+  sunshine: "#FEF08A"
+  leaf: "#22C55E"
+  orange: "#F97316"
+  pink: "#EC4899"
+  slate: "#1E293B"
+  gold: "#D4A017"
+  cream: "#FFF8E7"
+  wood: "#6B4226"
+  parchment: "#F5E6C8"
+
+typography:
+  display:
+    family: "Fredoka One"
+    fallback: "Sniglet, Baloo 2, sans-serif"
+    weight: 400
+  body:
+    family: "Nunito"
+    fallback: "Poppins, sans-serif"
+    weight: 700
+  narration:
+    family: "Nunito"
+    fallback: "Poppins, sans-serif"
+    weight: 400
+
+style:
+  anchor: "research/contoh-bab1.png"
+  genre: "storybook painterly illustration — soft painterly cartoon seperti buku cerita anak cetak, detail kaya, lembut & hangat"
+  mood: "cerah, hangat, ramah balita, nostalgic kampung Nusantara, tidak gelap/dramatis"
+  frame: "bingkai kayu ukir gelap dengan ornamen batik/gold, menempel di tepi halaman"
+  layout_chrome:
+    - "pita kayu atas: 'PETUALANGAN ADAB QILA & EZRA'"
+    - "label BAB + pita batik judul bab"
+    - "kotak narasi perkamen (parchment) di atas adegan"
+    - "balon kata putih membulat untuk dialog"
+    - "tab 'Pesan Ki Dalang' + kotak perkamen pesan adab di bawah"
+    - "ornamen gunungan/ukiran di sudut bawah"
+  ornaments:
+    - "ukiran kayu bermotif batik"
+    - "bunga frangipani & tanaman tropis"
+    - "awan lembut"
+    - "pancar cahaya hangat (golden hour lembut)"
+  backgrounds:
+    - "kampung Nusantara: rumah, halaman, pohon rindang"
+    - "interior rumah hangat"
+    - "taman berbunga"
+    - "jalan setapak kampung"
+
+# Prefix wajib untuk SEMUA panggilan image API (latar adegan penuh, boleh berisi karakter).
+image_prompt_prefix: >
+  Storybook painterly illustration for an Indonesian Muslim children's book,
+  soft painterly cartoon style with rich detail, warm cheerful colors,
+  gentle golden lighting, kampung Nusantara setting, big friendly eyes,
+  rounded cute proportions for toddlers, no text, no letters, no watermark.
+
+image_prompt_negative: >
+  no text, no letters, no watermark, no photorealism, no dark mood, no horror,
+  no weapons, no extra limbs, no deformed hands
+
+characters:
+  qila:
+    name: "Qila"
+    role: "kakak perempuan, pintar, cerewet, penyayang, pemimpin"
+    age: 6
+    outfit: "hijab pink muda, gamis batik merah muda bermotif emas, sepatu pink, bunga kecil di hijab"
+    skin: "sawo matang cerah"
+    hair: "tertutup hijab"
+    poses:
+      - smile
+      - explain
+      - wave
+      - point
+      - proud
+      - sit
+  ezra:
+    name: "Ezra"
+    role: "adik laki-laki, polos, ramah, penasaran, ceria"
+    age: 4
+    outfit: "peci hitam, koko biru muda bermotif halus, celana biru tua, sandal"
+    skin: "sawo matang cerah"
+    hair: "pendek hitam di bawah peci"
+    poses:
+      - curious
+      - smile
+      - salam
+      - try
+      - laugh
+      - sit
+
+page:
+  # Portrait 3:4 seperti contoh (board-book portrait).
+  width_px: 1240
+  height_px: 1653
+  width_mm: 150
+  height_mm: 200
+  safe_margin_mm: 10
+  device_scale: 1.5

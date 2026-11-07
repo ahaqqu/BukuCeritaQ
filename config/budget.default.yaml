@@ -1,0 +1,7 @@
+# Cap biaya default per buku (USD). Bisa dioverride per buku di
+# books/<slug>/budget.yaml. Hard fail saat salah satu cap tercapai.
+
+llm: 0.05
+image: 2.00
+tts: 0.30
+total: 2.50
