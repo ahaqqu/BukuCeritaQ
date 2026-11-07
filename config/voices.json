@@ -1,0 +1,66 @@
+{
+  "ibu": {
+    "engine": "edge-tts",
+    "voice": "id-ID-GadisNeural",
+    "rate": "-8%",
+    "pitch": "-4Hz",
+    "voice_id": "",
+    "stability": 0.55,
+    "similarity_boost": 0.8,
+    "style": 0.2,
+    "use_speaker_boost": true,
+    "note": "narator ibu hangat — narasi suasana/gambar, TANPA mengulang dialog karakter"
+  },
+  "qila": {
+    "engine": "edge-tts",
+    "voice": "id-ID-GadisNeural",
+    "rate": "+2%",
+    "pitch": "+6Hz",
+    "voice_id": "",
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true,
+    "note": "kakak perempuan ceria"
+  },
+  "ezra": {
+    "engine": "edge-tts",
+    "voice": "id-ID-ArdiNeural",
+    "rate": "+8%",
+    "pitch": "+14Hz",
+    "voice_id": "",
+    "stability": 0.45,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true,
+    "note": "adik laki polos, lebih tinggi & cepat"
+  },
+  "umi": {
+    "engine": "edge-tts",
+    "voice": "id-ID-GadisNeural",
+    "rate": "-4%",
+    "pitch": "-2Hz",
+    "voice_id": "",
+    "stability": 0.6,
+    "similarity_boost": 0.8,
+    "style": 0.2,
+    "use_speaker_boost": true,
+    "note": "suara Umi (ibu dalam cerita) — hangat, sedikit lebih dewasa dari narator"
+  },
+  "dalang": {
+    "engine": "edge-tts",
+    "voice": "id-ID-GadisNeural",
+    "rate": "-8%",
+    "pitch": "-4Hz",
+    "voice_id": "",
+    "note": "alias narator ibu"
+  },
+  "narrator": {
+    "engine": "edge-tts",
+    "voice": "id-ID-GadisNeural",
+    "rate": "-8%",
+    "pitch": "-4Hz",
+    "voice_id": "",
+    "note": "alias narator ibu untuk narasi umum"
+  }
+}
