@@ -33,6 +33,7 @@ export function runQA(book: StoryBook): QAIssue[] {
   // R2: leksikon malu/takut dilarang di teks anak
   for (const page of pages) {
     const childTexts = [
+      page.page_text ?? '',
       page.on_screen_text ?? '',
       ...page.dialogue.map((d) => d.text),
     ].join(' ')
@@ -56,14 +57,12 @@ export function runQA(book: StoryBook): QAIssue[] {
     }
   }
 
-  // R3: jumlah kata per halaman sesuai band usia
+  // R3: jumlah kata per halaman sesuai band usia (teks cetak: page_text + on_screen_text)
   const maxWordsPerPage = meta.age_band === '2-3' ? 12 : 25
   const minWordsPerPage = meta.age_band === '2-3' ? 1 : 3
   for (const page of pages) {
     if (page.page_type === 'cover') continue
-    const words = countWords(
-      page.dialogue.map((d) => d.text).join(' ') + ' ' + (page.on_screen_text ?? ''),
-    )
+    const words = countWords((page.page_text ?? '') + ' ' + (page.on_screen_text ?? ''))
     if (words > maxWordsPerPage) {
       issues.push({
         level: 'error',
@@ -82,11 +81,11 @@ export function runQA(book: StoryBook): QAIssue[] {
     }
   }
 
-  // R4: total kata buku
+  // R4: total kata buku (teks cetak)
   const totalWords = pages.reduce(
     (n, p) =>
       n +
-      countWords(p.dialogue.map((d) => d.text).join(' ') + ' ' + (p.on_screen_text ?? '')),
+      countWords((p.page_text ?? '') + ' ' + (p.on_screen_text ?? '')),
     0,
   )
   const maxTotal = meta.age_band === '2-3' ? 200 : 400
@@ -134,12 +133,12 @@ export function runQA(book: StoryBook): QAIssue[] {
     issues.push({ level: 'error', rule: 'phrase-source-required', message: 'key_phrase_source kosong' })
   }
 
-  // R8: jumlah halaman 10 (atau 8-12 dengan warning)
-  if (pages.length !== 10) {
+  // R8: jumlah halaman 12 = judul + 10 isi + penutup (10-14 dengan warning)
+  if (pages.length !== 12) {
     issues.push({
-      level: pages.length >= 8 && pages.length <= 12 ? 'warn' : 'error',
+      level: pages.length >= 10 && pages.length <= 14 ? 'warn' : 'error',
       rule: 'page-count',
-      message: `${pages.length} halaman (target 10)`,
+      message: `${pages.length} halaman (target 12 = judul + 10 isi + penutup)`,
     })
   }
 

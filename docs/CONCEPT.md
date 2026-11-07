@@ -9,7 +9,7 @@ Keputusan desain dikunci bersama Mas-sama pada sesi kickoff (lihat §4).
 
 Buku cerita anak (board-book style) untuk balita **2–5 tahun**, berbahasa Indonesia,
 bertema **adab & etika Islam + budaya Indonesia modern**. Satu buku = **satu konsep adab**,
-**10 halaman**, terbit **incremental** (banyak buku kecil, bukan satu buku tebal).
+**12 halaman** (judul + 10 halaman isi full content + penutup), terbit **incremental** (banyak buku kecil, bukan satu buku tebal).
 
 Tagline resmi: *"Pintar Beretika, Santun Berbudaya"*
 
@@ -73,7 +73,7 @@ Cerah, ramah balita, tidak gelap/dramatis. (Varian papercraft lama tidak dipakai
 | 2 | Tema buku pertama | **Adab Qila & Ezra** |
 | 3 | Format output | **PDF cetak + web reader dengan audio narasi** |
 | 4 | Strategi aset | **Library SVG** karakter/prop (dibuat sekali) + **AI untuk latar adegan** |
-| 5 | Spek buku | **10 halaman, usia 2–5 th, 1 konsep per buku**, seri incremental banyak buku |
+| 5 | Spek buku | **12 halaman (judul + 10 isi + penutup), usia 2–5 th, 1 konsep per buku**, seri incremental banyak buku |
 | 6 | Audio | Web dengan narasi audio bagus; **TTS MiMo dulu**, ElevenLabs starter bila perlu |
 | 7 | Provider AI | **Agnostik** (adapter), default API berbayar murah; biaya per buku dicatat & dibatasi |
 | 8 | Sumber topik | **Agen mengusulkan katalog** adab → user memilih/mengurutkan → agen memproduksi berulang |
@@ -97,7 +97,7 @@ Setiap halaman punya:
 - **Box Hikmah Dalang** (di halaman penutup / sebagian halaman) — catatan hangat
   dari Dalang, boleh memuat adab/doa pendek yang autentik
 
-Struktur beat sheet 10 halaman akan ditetapkan di `docs/PLAN.md` (berdasar riset
+Struktur beat sheet 12 halaman (judul + 10 isi + penutup) ada di `docs/PLAN.md` (berdasar riset
 toddler-book best practice).
 
 ## 7. Referensi gambar (repo ini)

@@ -9,7 +9,7 @@ export type LayoutType =
   | 'refrain'
   | 'hikmah'
   | 'closing'
-export type Speaker = 'qila' | 'ezra' | 'dalang' | 'narrator'
+export type Speaker = 'qila' | 'ezra' | 'umi' | 'dalang' | 'narrator'
 
 export interface BookMeta {
   slug: string
@@ -49,7 +49,7 @@ export interface VisualScene {
 export interface DialogueLine {
   speaker: Speaker
   text: string
-  narration_text?: string
+  audio_text?: string
   bubble?: 'a' | 'b'
 }
 
@@ -59,6 +59,8 @@ export interface Page {
   layout_type: LayoutType
   visual_scene: VisualScene
   dialogue: DialogueLine[]
+  page_text?: string
+  audio_narration?: string
   on_screen_text?: string
   dalang_note?: string
   repeats_of?: number | null

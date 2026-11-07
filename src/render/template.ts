@@ -239,12 +239,9 @@ export function renderPageHTML(book: StoryBook, page: Page, assets: AssetPaths):
   const isHikmah = page.layout_type === 'hikmah'
   const isClosing = page.page_type === 'closing'
 
-  // Narasi: gabungkan narration_text dari dialog (teks untuk pembaca).
-  const narrationText = page.dialogue
-    .map((d) => d.narration_text || d.text)
-    .filter(Boolean)
-    .join(' ')
-    .trim()
+  // Narasi cetak: page_text (teks singkat untuk pembaca).
+  // Naskah audio (audio_narration + audio_text) TIDAK tampil di halaman.
+  const narrationText = (page.page_text ?? '').trim()
 
   const seriesBar = `<div class="series-bar">${escapeHtml(SERIES_BAR)}</div>`
 

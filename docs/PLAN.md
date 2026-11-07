@@ -11,7 +11,7 @@ Satu pipeline **agentic** yang bisa memproduksi buku cerita balita **berulang ka
 2. **Berkualitas** — sesuai standar buku balita (riset §5) + guardrail konten Islam (§6).
 3. **Biaya terkontrol** — target **< $2 / buku** semua termasuk; aset dasar dibayar sekali.
 
-Bukan satu buku tebal, tapi **seri incremental**: satu buku = satu konsep adab, 10 halaman.
+Bukan satu buku tebal, tapi **seri incremental**: satu buku = satu konsep adab, 12 halaman (judul + 10 isi + penutup).
 
 ## 1. Bentuk repo (pipeline standalone)
 
@@ -91,7 +91,7 @@ Setiap tahap **idempotent & bisa di-resume** (state di `story.json` + cost-log).
 | Render halaman | **HTML/CSS + SVG inline → Playwright `page.pdf()`** | svg-to-pdfkit | Satu sumber HTML untuk PDF *dan* web (tidak drift); kontrol tipografi penuh |
 | Cetak | PDF RGB + post-process CMYK (Ghostscript) bila cetak offset | cetak digital RGB | Chromium hanya RGB |
 | Web reader | **1 file `reader.html` + `book.json` + gambar halaman + mp3** | HTML single-file base64 | Ringan, offline, tap besar untuk balita |
-| TTS | **`edge-tts`** (gratis, `id-ID-ArdiNeural` / `id-ID-GadisNeural`) | **ElevenLabs** Starter ($6/bln, 30 mnt) | MiMo TTS tersedia via tool desktop untuk asset one-off; pipeline butuh engine CLI → edge-tts default, ElevenLabs saat perlu kualitas/voice clone |
+| TTS | **`edge-tts`** (gratis, `id-ID-ArdiNeural` / `id-ID-GadisNeural`) | **ElevenLabs** Starter ($5/bln, 30 mnt) | MiMo TTS tersedia via tool desktop untuk asset one-off; pipeline butuh engine CLI → edge-tts default, ElevenLabs saat perlu kualitas/voice clone — lihat `docs/TTS.md` |
 | Gambar latar | **Gemini Nano Banana** (~$0.03/gambar) | OpenAI `gpt-image-2` / lokal SDXL | Reference-image conditioning bawaan → konsistensi gaya |
 | LLM naskah | Adapter: default model murah (Gemini Flash / dsb.) | apa pun via `providers.yaml` | Naskah 10 halaman balita = < 2k token |
 
@@ -135,25 +135,27 @@ Angka keras dari riset:
 | Metrik | Usia 2–3 | Usia 4–5 |
 |--------|----------|----------|
 | Kata / halaman | 3–12 | 8–20 (maks 25) |
-| Kata / buku (10 hlmn) | 100–200 | 200–350 |
+| Kata / buku (12 hlmn) | 120–240 | 240–420 |
 | Kalimat / halaman | 1 (3–8 kata) | maks 2 (5–12 kata) |
 | Balon kata / halaman | maks 2, ≤10 kata | maks 2, ≤10 kata |
 | Frasa adab baru / buku | **1** | **1** |
 
-**Beat sheet 10 halaman** (bukan 10 beat — cukup 4 beat besar):
+**Beat sheet 12 halaman** (judul + 10 halaman isi full content + penutup — bukan 10 beat, cukup 4 beat besar):
 
 | Hlm | Beat | Spec |
 |-----|------|------|
-| 1 | Cover | Judul + Qila&Ezra di adegan + tagline |
+| 1 | **Judul** | Judul + Qila&Ezra di adegan + tagline |
 | 2 | Dalang membuka | Setup 1–2 kalimat, hook visual |
 | 3 | Situasi | Ezra bertindak; balon ≤8 kata |
-| 4 | Qila memodelkan | **Frasa kunci** di balon |
-| 5 | Ezra mencoba | Percobaan pertama; frasa diulang |
-| 6 | Gagal lucu | Wobble → coba lagi |
-| 7 | Bersama | **Refrain** (kata-kata identik dgn hlm 4) |
-| 8 | Transfer | Frasa sama, konteks mikro baru |
-| 9 | **Box Hikmah Dalang** | Hikmah (kata anak) + doa (ID + Arab) + ajakan "Ayo bilang: ___" |
-| 10 | Penutup | Adegan keluarga hangat, "Alhamdulillah", teaser buku berikutnya |
+| 4 | Qila mengingatkan | Pengingat lembut sebelum frasa kunci |
+| 5 | Qila memodelkan | **Frasa kunci** di balon |
+| 6 | Ezra mencoba | Percobaan pertama; frasa diulang |
+| 7 | Balasan hangat | Umi membalas salam (respons positif) |
+| 8 | Gagal lucu | Wobble → coba lagi |
+| 9 | Bersama | **Refrain** (kata-kata identik dgn hlm 5) |
+| 10 | Transfer | Frasa sama, konteks mikro baru |
+| 11 | **Box Hikmah Dalang** | Hikmah (kata anak) + doa (ID + Arab) + ajakan "Ayo bilang: ___" |
+| 12 | **Penutup** | Adegan keluarga hangat, "Alhamdulillah", teaser buku berikutnya |
 
 Pola ulang (refrain) muncul 3–4× per buku. Baca keras hlm 3–8 target **< 2 menit**.
 
@@ -198,7 +200,7 @@ Hangat, bermain, konkret (sendok, sepatu, balok). Ezra **berusaha dan membaik**
 | **`cost-log.jsonl`** | Setiap panggilan API dicatat (tokens, usd) → roll-up per buku & per seri. |
 | **Engine gratis dulu** | Naskah: model murah. TTS: edge-tts. Gambar: hanya bila latar belum ada di cache. |
 
-**Target biaya per buku (10 halaman):**
+**Target biaya per buku (12 halaman):**
 
 | Item | Estimasi |
 |------|----------|
@@ -244,8 +246,10 @@ Aset karakter/prop awal (sekali bayar waktu): ~$0.50–1.00 → di-amortisasi ke
         "props": ["frame_kayu", "cloud_megamendung"]
       },
       "dialogue": [
-        { "speaker": "qila", "text": "…", "narration_text": "…" }
+        { "speaker": "qila", "text": "…", "audio_text": "…" }
       ],
+      "page_text": "…",
+      "audio_narration": "…",
       "on_screen_text": "…",
       "dalang_note": "…",           // jadi hint performa TTS
       "repeats_of": null             // indeks halaman refrain, bila ada
@@ -254,8 +258,11 @@ Aset karakter/prop awal (sekali bayar waktu): ~$0.50–1.00 → di-amortisasi ke
 }
 ```
 
-`text` = yang tampil di halaman (≤ 8–10 kata). `narration_text` = yang dibacakan
-TTS (boleh sedikit lebih kaya, tetap pendek).
+`page_text` = yang tampil di halaman (≤ 8–10 kata). `audio_narration` = narasi
+ibu untuk TTS — mendeskripsikan gambar/suasana lebih kaya (kayak ibu membacakan
+buku ke anak), **tanpa** mengulang dialog karakter. `text` = kutipan karakter di
+halaman; `audio_text` = versi ucapannya (boleh beda dari teks cetak). Teks cetak
+singkat; audio lebih kaya — keduanya memang tidak harus sama.
 
 ## 9. Kontrak adapter (biaya & provider bisa ditukar)
 
@@ -281,7 +288,7 @@ endpoint/model/key-name; **kode tidak mengenal merek tertentu**.
 - [ ] Library aset awal: pose Qila & Ezra + ornamen (frame, mega mendung, balon)
 
 ### Fase 1 — Buku pertama `adab-salam` (sesi ini)
-- [ ] `story.json` (10 halaman, beat sheet §5)
+- [ ] `story.json` (12 halaman, beat sheet §5)
 - [ ] Latar adegan via image API (style lock dari sampul)
 - [ ] Audio narasi per halaman (TTS MiMo/edge-tts)
 - [ ] Render: `book.pdf` + `web/` reader

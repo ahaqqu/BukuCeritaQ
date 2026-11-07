@@ -1,7 +1,7 @@
 // Skema validasi story.json — dipakai oleh pipeline & QA.
 import { z } from 'zod'
 
-export const speakerSchema = z.enum(['qila', 'ezra', 'dalang', 'narrator'])
+export const speakerSchema = z.enum(['qila', 'ezra', 'umi', 'dalang', 'narrator'])
 export const pageTypeSchema = z.enum([
   'cover',
   'story',
@@ -49,7 +49,7 @@ export const visualSceneSchema = z.object({
 export const dialogueLineSchema = z.object({
   speaker: speakerSchema,
   text: z.string().min(1),
-  narration_text: z.string().optional(),
+  audio_text: z.string().optional(),
   bubble: z.enum(['a', 'b']).optional(),
 })
 
@@ -59,6 +59,8 @@ export const pageSchema = z.object({
   layout_type: layoutTypeSchema,
   visual_scene: visualSceneSchema,
   dialogue: z.array(dialogueLineSchema),
+  page_text: z.string().optional(),
+  audio_narration: z.string().optional(),
   on_screen_text: z.string().optional(),
   dalang_note: z.string().optional(),
   repeats_of: z.number().int().positive().nullable().optional(),
@@ -71,7 +73,7 @@ export const storyBookSchema = z.object({
     seed: z.number(),
     palette: z.record(z.string(), z.string()),
   }),
-  pages: z.array(pageSchema).min(1).max(12),
+  pages: z.array(pageSchema).min(1).max(14),
 })
 
 export type StoryBookParsed = z.infer<typeof storyBookSchema>

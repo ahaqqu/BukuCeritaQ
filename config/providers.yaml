@@ -32,7 +32,11 @@ providers:
   tts:
     # Default gratis (CLI edge-tts). Upgrade ke ElevenLabs bila perlu.
     engine: "edge-tts"
-    # ElevenLabs starter: $6/bln, 30k credits ≈ 30 menit.
+    # ElevenLabs starter: $5/bln, 30k credits ≈ 30 menit audio.
     # engine: "elevenlabs"
-    # model: "eleven_multilingual_v2"
-    # api_key_env: "ELEVENLABS_API_KEY"
+    model: "eleven_multilingual_v2"
+    api_key_env: "ELEVENLABS_API_KEY"
+    # Cara pakai (lihat docs/TTS.md):
+    #   1. Set env ELEVENLABS_API_KEY
+    #   2. Isi voice_id per suara di config/voices.json
+    #   3. Ganti "engine": "elevenlabs" di config/voices.json per suara
